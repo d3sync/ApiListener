@@ -52,7 +52,7 @@ app.MapMethods("{*path}", new[] { "GET", "POST", "PUT", "DELETE" }, async (HttpC
 
     // Here, you can add your logic to handle the request
     // For simplicity, we are just returning a success message.
-    return Results.Ok(new { StatusCode = 200, message = "Request logged successfully." });
+    return Results.Ok(new { StatusCode = 200, message = "Request logged successfully.", Request = bodyContent });
 });
 
 app.Run();
